@@ -1,0 +1,11 @@
+<h2>Linhas - {{ tipo }}</h2>
+
+<ul class="">
+  <li *ngFor="let linha of linhas">
+    <a routerLink="/detalhes/{{ linha.id }}">
+      <button class="btn btn-outline-secondary">
+        <span class="badge">{{ linha.id }}</span> {{ linha.nome }}
+      </button>
+    </a> 
+  </li>
+</ul>

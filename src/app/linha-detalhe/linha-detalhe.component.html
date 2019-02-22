@@ -1,0 +1,6 @@
+<div *ngIf="linha">
+  <h2>{{ linha.nome | uppercase }} Detalhes</h2>
+  <div><span>id: </span>{{ linha.id }}</div>
+</div>
+
+<button (click)="voltar()">Voltar</button>
