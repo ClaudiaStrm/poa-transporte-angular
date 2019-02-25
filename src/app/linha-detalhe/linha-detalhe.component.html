@@ -1,6 +1,22 @@
 <div *ngIf="linha">
   <h2>{{ linha.nome | uppercase }} Detalhes</h2>
   <div><span>id: </span>{{ linha.id }}</div>
+  <div><span>codigo: </span>{{ linha.codigo }}</div>
+  <div><span>nome: </span>{{ linha.nome }}</div>
 </div>
+
+<ul class="">
+  <li *ngFor="let localizacao of linha.localizacao">
+    <a href="https://www.google.com/maps/?q={{ localizacao.lat }}, {{ localizacao.lng }}">
+      <button class="btn btn-outline-secondary">
+        <span class="badge">{{ localizacao.lat }}</span>
+        <span class="badge">{{ localizacao.lng }}</span>
+      </button>
+    </a> 
+  </li>
+</ul>
+
+
+
 
 <button (click)="voltar()">Voltar</button>
