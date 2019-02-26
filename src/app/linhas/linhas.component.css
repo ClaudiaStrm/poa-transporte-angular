@@ -1,0 +1,16 @@
+.list-group-item {
+  background-color: #f6f6f6;
+}
+
+.list-group-item a {
+  background-color: #f6f6f6;
+}
+
+.list-group-item:hover {
+  background: #622560;
+  color: #f6f6f6;
+}
+
+.list-group-item a:hover {
+  color: #f6f6f6;
+}

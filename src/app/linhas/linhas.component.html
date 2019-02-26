@@ -1,11 +1,13 @@
-<h2>Linhas - {{ tipo }}</h2>
+<div class="jumbotron">
+  <h2>Linhas - {{ tipo }}</h2>
 
-<ul class="list-group">
-  <li *ngFor="let linha of linhas">
-    <a routerLink="/detalhes/{{ linha.id }}">
-      <button class="btn btn-outline-secondary">
-        <span class="badge">{{ linha.id }} </span> {{ linha.nome }}
-      </button>
-    </a> 
-  </li>
-</ul>
+  <ul class="list-group">
+    <li *ngFor="let linha of linhas" class="list-group-item">
+      <a routerLink="/detalhes/{{ linha.id }}">
+        <div class="badge">
+          {{ linha.id }} {{ linha.nome }}
+        </div>
+      </a> 
+    </li>
+  </ul>
+</div>

@@ -3,10 +3,69 @@
 body {
   background-color: #f6f6f6;
   font-family: 'Open Sans';
+  overflow-y: scroll;
 } 
+
+h1, h2 {
+  margin: 0;
+}
 
 .container {
   background: url(http://www.datapoa.com.br/img/fundo.png);
-  height: 100vh;
-  padding: 0;
+  background-repeat: repeat;
+  height: 70vh;
+  min-width: min-content;
+  min-height: fit-content;
+  padding: 3vh 0;
+  width: 70%;
+}
+
+.nav {
+  align-items: center;
+  background-color: #fafafa;
+  border-top: 5px solid #622560;
+}
+
+.nav img {
+  height: 60px;
+  padding: 3px;
+  width: 60px;
+}
+
+.nav a {
+  align-items: center;
+  color: #622560;
+  display: flex;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  background: #cccccc;
+}
+
+.nav a h1 {
+  margin: 0;
+  font-weight: bold;
+}
+
+.jumbotron {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  margin: 0 auto;
+  min-width: min-content;
+  min-height: fit-content;
+  width: 80%;
+}
+
+.jumbotron h2 {
+  color: #622560;
+  font-family: inherit;
+  font-weight: 600;
+  margin: 0 auto;
+  margin-bottom: 10vh;
+  text-align: center;
+  width: 80%;
 }

@@ -1,4 +1,14 @@
+.jumbotron a {
+  margin-bottom: 5vh;
+  width: fit-content;
+}
+
 .btn-padrao {
   background: #622560;
   color: #fafafa;
+  margin: 0 auto;
+  min-height: min-content;
+  min-width: min-content;
+  padding: 4%;
+  width: 40vw;
 }
