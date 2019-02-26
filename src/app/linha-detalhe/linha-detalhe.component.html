@@ -1,22 +1,22 @@
-<div *ngIf="linha">
-  <h2>{{ linha.nome | uppercase }} Detalhes</h2>
-  <div><span>id: </span>{{ linha.id }}</div>
-  <div><span>codigo: </span>{{ linha.codigo }}</div>
-  <div><span>nome: </span>{{ linha.nome }}</div>
+<div *ngIf="linha" class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ linha.nome | uppercase }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Detalhes</h6>
+    <p class="card-text"><span>Id: </span>{{ linha.idlinha }}</p>
+    <p class="card-text"><span>Código: </span>{{ linha.codigo }}</p>
+
+    <hr>
+    <h6 class="card-subtitle mb-2 text-muted">Itinerário</h6>
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let localizacao of localizacao" class="list-group-item">
+        <a href="https://www.google.com/maps/?q={{ localizacao.lat }},{{ localizacao.lng }}">
+            <span class="badge">{{ localizacao.lat }}</span>
+            <span class="badge">{{ localizacao.lng }}</span>
+        </a>
+      </li>
+    </ul>
+
+    <hr>
+    <button class="btn btn-secondary" (click)="voltar()">Voltar</button>
+  </div>
 </div>
-
-<ul class="">
-  <li *ngFor="let localizacao of linha.localizacao">
-    <a href="https://www.google.com/maps/?q={{ localizacao.lat }}, {{ localizacao.lng }}">
-      <button class="btn btn-outline-secondary">
-        <span class="badge">{{ localizacao.lat }}</span>
-        <span class="badge">{{ localizacao.lng }}</span>
-      </button>
-    </a> 
-  </li>
-</ul>
-
-
-
-
-<button (click)="voltar()">Voltar</button>
