@@ -28,8 +28,9 @@ export class LinhaDetalheComponent implements OnInit {
 
   @Input() linha: Linha 
   @Input() localizacao: Localizacao[]
-  
+
   private id = +this.route.snapshot.paramMap.get('id')
+  private urlLinha = 'http://www.poatransporte.com.br/php/facades/process.php?a=il&p='
 
   ngOnInit() {
     this.getLinha(this.id)
@@ -44,7 +45,7 @@ export class LinhaDetalheComponent implements OnInit {
   }
 
   private async getLocalizacao(id) {   
-    const data = await fetch(`http://www.poatransporte.com.br/php/facades/process.php?a=il&p=${ id }`)
+    const data = await fetch(`${ this.urlLinha }${ id }`)
     .then(response => response.json())
     
     of(Object.values(data)

@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { HttpClientModule }    from '@angular/common/http'
 
+import {NgxPaginationModule} from 'ngx-pagination'
+
 import { AppComponent } from './app.component'
 import { LinhasComponent } from './linhas/linhas.component'
 import { LinhaDetalheComponent } from './linha-detalhe/linha-detalhe.component'
@@ -18,7 +20,8 @@ import { InicialComponent } from './inicial/inicial.component'
   imports: [
     AppRoutingModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

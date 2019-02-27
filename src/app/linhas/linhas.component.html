@@ -1,11 +1,14 @@
 <div class="jumbotron">
-  <h2>Linhas - {{ tipo }}</h2>
+  <h2>Linhas - {{ tipoLinha }}</h2>
 
   <ul class="list-group">
-    <li *ngFor="let linha of linhas" class="list-group-item">
-      <a routerLink="/detalhes/{{ linha.id }}" class="">
-          {{ linha.nome }}
+    <li *ngFor="let linha of linhas | paginate: { itemsPerPage: 50, currentPage: p }" class="list-group-item">
+      <a routerLink="/detalhes/{{ linha.id }}">
+          {{ linha.nome.split('/').join('/ ') }}
       </a> 
     </li>
   </ul>
+
+	<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
 </div>

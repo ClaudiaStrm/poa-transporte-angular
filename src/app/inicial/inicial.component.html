@@ -1,11 +1,21 @@
 <div class="jumbotron">
   <h2>Linhas de transporte público de Porto Alegre</h2>
-  <a routerLink="/linhas/onibus" (click)="setTipo('onibus')">
+
+  <form class="form-busca">
+    <div class="div-busca">
+      <input type="text" aria-label="buscar por id" class="input-buscar" 
+        placeholder="buscar por id" #id>
+      <i (click)="buscar(id.value)" class="material-icons padrao icone-buscar" 
+        aria-label="buscar">search</i>
+    </div>
+  </form>
+
+  <a routerLink="/linhas/onibus" (click)="setTipo('o')">
     <button class="btn btn-padrao">
       Lista de Ônibus
     </button>
   </a>
-  <a routerLink="/linhas/lotacao" (click)="setTipo('lotacao')">
+  <a routerLink="/linhas/lotacao" (click)="setTipo('l')">
     <button class="btn btn-padrao">
       Lista de Lotações
     </button>

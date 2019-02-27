@@ -1,6 +1,6 @@
 <div class="jumbotron">
   <div *ngIf="linha">
-    <h2 class="">{{ linha.nome | uppercase }}</h2>
+    <h2 class="">{{ linha.nome.split('/').join('/ ') | uppercase }}</h2>
     <p class="text-right"><button class="btn btn-link small" (click)="voltar()">Voltar</button></p>
     <h6 class="mb-2 lead">Detalhes</h6>
     <p><span class="font-weight-bold">Id: </span>{{ linha.idlinha }}</p>
@@ -10,7 +10,8 @@
     <hr>
     <h6 class="mb-2 lead">Itinerário <span class="small">(clique para ver a localização)</span></h6>
     <ul class="list-group list-group-flush">
-      <li *ngFor="let localizacao of localizacao" class="list-group-item">
+      <li *ngFor="let localizacao of localizacao | paginate: { itemsPerPage: 50, currentPage: p }" 
+        class="list-group-item">
         <a 
         href="https://www.google.com/maps/?q={{ localizacao.lat }},{{ localizacao.lng }}"
         class="d-block"

@@ -17,11 +17,11 @@ export class LinhaService {
     private localizacaoService: LocalizacaoService
     ) { }
 
-  private onibusUrl = 'http://www.poatransporte.com.br/php/facades/process.php?a=nc&p=%&t=l'
+  private listaUrl = 'http://www.poatransporte.com.br/php/facades/process.php?a=nc&p=%&t='
   private linhaUrl = 'http://www.poatransporte.com.br/php/facades/process.php?a=il&p='
 
-  getLinhas(): Observable<Linha[]> {
-    return this.http.get<Linha[]>(this.onibusUrl)
+  getLinhas(tipo: string): Observable<Linha[]> {
+    return this.http.get<Linha[]>(`${ this.listaUrl }${ tipo }`)
     .pipe(
       tap(_ => console.log('fetched linhas')),
       catchError(this.handleError('getLinhas', []))

@@ -13,7 +13,8 @@ import { LinhaService } from '../linha.service'
 export class LinhasComponent implements OnInit {
 
   linhas: Linha[]
-  tipo: string
+  tipoLinha: string
+  tipoBusca: string
   
   constructor(
     private linhaService: LinhaService,
@@ -22,16 +23,17 @@ export class LinhasComponent implements OnInit {
 
   ngOnInit() {
     this.setTipo()
-    this.getLinhas()
+    this.getLinhas(this.tipoBusca)
   }
 
-  getLinhas(): void {
+  getLinhas(tipoBusca): void {
     this.linhaService
-    .getLinhas()
+    .getLinhas(tipoBusca)
     .subscribe(linhas => this.linhas = linhas)
   }
 
   private setTipo(): void {
-    this.tipo = this.route.snapshot.paramMap.get('tipo')
+    this.tipoBusca = this.route.snapshot.paramMap.get('tipo').charAt(0)
+    this.tipoBusca === 'o' ? this.tipoLinha = 'ônibus' : this.tipoLinha = 'lotação'
   }
 }

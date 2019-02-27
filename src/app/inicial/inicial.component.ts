@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'app-inicial',
@@ -7,11 +8,21 @@ import { Component, OnInit } from '@angular/core'
 })
 export class InicialComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   tipo: string
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    this.router.navigate(['/detalhes/28'])
+ }
+
+  buscar(id: number) {
+    return this.router.navigate([`/detalhes/${ id }`])
   }
 
 }

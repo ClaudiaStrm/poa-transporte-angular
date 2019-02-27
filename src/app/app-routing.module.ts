@@ -9,7 +9,6 @@ const routes: Routes = [
   { path: '', redirectTo: '/inicial', pathMatch: 'full' },
   { path: 'inicial', component: InicialComponent },
   { path: 'linhas/:tipo', component: LinhasComponent },
-  { path: 'linhas/:tipo', component: LinhasComponent },
   { path: 'detalhes/:id', component: LinhaDetalheComponent }
 ]
 
