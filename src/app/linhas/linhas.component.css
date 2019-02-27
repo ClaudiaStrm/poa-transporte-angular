@@ -1,16 +1,21 @@
 .list-group-item {
   background-color: #f6f6f6;
+  padding: 0;
 }
 
 .list-group-item a {
-  background-color: #f6f6f6;
+  color: #622560;
+  display: inline-block;
+  padding: .75rem 1.25rem;
+  width: 100%;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1;
 }
 
-.list-group-item:hover {
+.list-group-item *:hover {
   background: #622560;
   color: #f6f6f6;
-}
-
-.list-group-item a:hover {
-  color: #f6f6f6;
+  font-weight: 500;
+  text-decoration: none;
 }

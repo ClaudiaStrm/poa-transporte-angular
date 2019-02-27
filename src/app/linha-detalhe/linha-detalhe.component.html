@@ -1,24 +1,26 @@
 <div class="jumbotron">
-  <div *ngIf="linha" class="card">
-    <div class="card-body">
-      <h5 class="card-title">{{ linha.nome | uppercase }}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Detalhes</h6>
-      <p class="card-text"><span>Id: </span>{{ linha.idlinha }}</p>
-      <p class="card-text"><span>Código: </span>{{ linha.codigo }}</p>
+  <div *ngIf="linha">
+    <h2 class="">{{ linha.nome | uppercase }}</h2>
+    <p class="text-right"><button class="btn btn-link small" (click)="voltar()">Voltar</button></p>
+    <h6 class="mb-2 lead">Detalhes</h6>
+    <p><span class="font-weight-bold">Id: </span>{{ linha.idlinha }}</p>
+    <p><span class="font-weight-bold">Código: </span>{{ linha.codigo }}</p>
 
-      <hr>
-      <h6 class="card-subtitle mb-2 text-muted">Itinerário</h6>
-      <ul class="list-group list-group-flush">
-        <li *ngFor="let localizacao of localizacao" class="list-group-item">
-          <a href="https://www.google.com/maps/?q={{ localizacao.lat }},{{ localizacao.lng }}">
-              <span class="badge">{{ localizacao.lat }}</span>
-              <span class="badge">{{ localizacao.lng }}</span>
-          </a>
-        </li>
-      </ul>
 
-      <hr>
-      <button class="btn btn-secondary" (click)="voltar()">Voltar</button>
-    </div>
+    <hr>
+    <h6 class="mb-2 lead">Itinerário <span class="small">(clique para ver a localização)</span></h6>
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let localizacao of localizacao" class="list-group-item">
+        <a 
+        href="https://www.google.com/maps/?q={{ localizacao.lat }},{{ localizacao.lng }}"
+        class="d-block"
+        >
+          <span class="badge">lat: {{ localizacao.lat }}</span>
+          <span class="badge">lng: {{ localizacao.lng }}</span>
+        </a>
+      </li>
+    </ul>
+
+    <hr>
   </div>
 </div>

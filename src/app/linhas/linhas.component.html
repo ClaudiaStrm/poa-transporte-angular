@@ -3,10 +3,8 @@
 
   <ul class="list-group">
     <li *ngFor="let linha of linhas" class="list-group-item">
-      <a routerLink="/detalhes/{{ linha.id }}">
-        <div class="badge">
-          {{ linha.id }} {{ linha.nome }}
-        </div>
+      <a routerLink="/detalhes/{{ linha.id }}" class="">
+          {{ linha.nome }}
       </a> 
     </li>
   </ul>

@@ -1,3 +1,7 @@
+.jumbotron h2 {
+  margin-bottom: 10vh;
+}
+
 .jumbotron a {
   margin-bottom: 5vh;
   width: fit-content;
