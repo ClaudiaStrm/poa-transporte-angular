@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from "@angular/router"
 
+import { LinhaService }  from '../linha.service'
+
 @Component({
   selector: 'app-inicial',
   templateUrl: './inicial.component.html',
@@ -9,7 +11,8 @@ import { Router } from "@angular/router"
 export class InicialComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private linhaService: LinhaService
   ) { }
 
   tipo: string
@@ -18,7 +21,6 @@ export class InicialComponent implements OnInit {
   }
 
   onSubmit() {
-    this.router.navigate(['/detalhes/28'])
  }
 
   buscar(id: number) {

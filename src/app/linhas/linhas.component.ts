@@ -32,6 +32,11 @@ export class LinhasComponent implements OnInit {
     .subscribe(linhas => this.linhas = linhas)
   }
 
+  buscarPorNome(nome) {
+    this.linhaService.buscarPorNome(nome, this.tipoBusca)
+    .subscribe(linhas => this.linhas = linhas)
+  }
+
   private setTipo(): void {
     this.tipoBusca = this.route.snapshot.paramMap.get('tipo').charAt(0)
     this.tipoBusca === 'o' ? this.tipoLinha = 'ônibus' : this.tipoLinha = 'lotação'

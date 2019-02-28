@@ -1,6 +1,16 @@
 <div class="jumbotron">
   <h2>Linhas - {{ tipoLinha }}</h2>
 
+  <form class="form-busca">
+    <div class="div-busca">
+      <input type="text" aria-label="buscar por nome" class="input-buscar" 
+        placeholder="buscar por nome" #nome>
+      <i (click)="buscarPorNome(nome.value)" (keyup.enter)="buscarPorNome(nome.value)" 
+        class="material-icons padrao icone-buscar" 
+        aria-label="buscar por nome" tabindex="0">search</i>
+    </div>
+  </form>
+
   <ul class="list-group">
     <li *ngFor="let linha of linhas | paginate: { itemsPerPage: 50, currentPage: p }" class="list-group-item">
       <a routerLink="/detalhes/{{ linha.id }}">

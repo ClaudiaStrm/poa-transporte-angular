@@ -9,9 +9,6 @@ import { Localizacao } from '../models/localizacao'
 import { LinhaService }  from '../linha.service'
 
 
-import { LocalizacaoService } from '../localizacao.service'
-
-
 @Component({
   selector: 'app-linha-detalhe',
   templateUrl: './linha-detalhe.component.html',
@@ -23,7 +20,6 @@ export class LinhaDetalheComponent implements OnInit {
     private route: ActivatedRoute,
     private linhaService: LinhaService,
     private location: Location,
-    private localizacaoService: LocalizacaoService
   ) { }
 
   @Input() linha: Linha 
