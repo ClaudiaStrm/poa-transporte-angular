@@ -5,8 +5,9 @@
     <div class="div-busca">
       <input type="text" aria-label="buscar por id" class="input-buscar" 
         placeholder="buscar por id" #id>
-      <i (click)="buscar(id.value)" class="material-icons padrao icone-buscar" 
-        aria-label="buscar">search</i>
+      <i (click)="buscar(id.value)" (keyup.enter)="buscar(id.value)" 
+        class="material-icons padrao icone-buscar" 
+        aria-label="buscar" tabindex="0">search</i>
     </div>
   </form>
 

@@ -67,3 +67,19 @@ h1, h2 {
   text-align: center;
   width: 80%;
 }
+
+pagination-template .ngx-pagination {
+  margin-left: -10%;
+}
+
+.ngx-pagination a, 
+.ngx-pagination span,
+.ngx-pagination .pagination-previous a::before,
+.ngx-pagination .pagination-next a::after {
+  color: #622560;
+}
+
+.ngx-pagination .pagination-previous.disabled::before,
+.ngx-pagination .pagination-next.disabled::after {
+  color: #ccc;
+}

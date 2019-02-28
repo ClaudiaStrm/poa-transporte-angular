@@ -22,6 +22,15 @@
       </li>
     </ul>
 
+    <pagination-controls 
+      (pageChange)="p = $event"
+      previousLabel=""
+      nextLabel=""
+      screenReaderPaginationLabel="Paginação"
+      screenReaderPageLabel="página"
+      screenReaderCurrentLabel="Você está na página">
+    </pagination-controls>
+
     <hr>
   </div>
 </div>
