@@ -15,8 +15,12 @@
 
 .btn-padrao:hover, .btn-padrao:focus, .btn-padrao:active {
   text-decoration: none;
-  border: 3px double #cccccc;
+  outline: 3px double #622560;
   box-sizing: border-box;
+}
+
+#id-invalido {
+  display: none;
 }
 
 

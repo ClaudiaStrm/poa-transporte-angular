@@ -5,11 +5,15 @@
     <div class="div-busca">
       <input type="text" aria-label="buscar por id" class="input-buscar" 
         placeholder="buscar por id" #id>
-      <i (click)="buscar(id.value)" (keyup.enter)="buscar(id.value)" 
+      <i (click)="buscarPorId(id.value)" (keyup.enter)="buscarPorId(id.value)" 
         class="material-icons padrao icone-buscar" 
         aria-label="buscar" tabindex="0">search</i>
     </div>
   </form>
+
+  <div class="alert alert-danger" id="id-invalido">
+    O id informado não é válido. 
+  </div>
 
   <a routerLink="/linhas/onibus" (click)="setTipo('o')">
     <button class="btn btn-padrao">

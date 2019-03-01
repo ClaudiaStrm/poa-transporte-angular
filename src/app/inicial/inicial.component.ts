@@ -20,10 +20,11 @@ export class InicialComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
- }
-
-  buscar(id: number) {
+  buscarPorId(id: string) {
+    if (!id || !parseInt(id)) {
+      document.getElementById("id-invalido").style.display = "block"
+      return
+    }
     return this.router.navigate([`/detalhes/${ id }`])
   }
 
